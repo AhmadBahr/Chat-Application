@@ -1,6 +1,6 @@
-#Table of Contents
+# Table of Contents
 
-##General Info
+## General Info
 1. [**General Info**](#general-info)
 2. [**Backend Technologies Used**](#backend-technology-used)
 3. [**Frontend Technologies Used**](#frontend-techlogy-used)
@@ -8,17 +8,17 @@
 5. [**Features**](#features) 
 6. [**Code & Snippets**](#CodeSnippets)
    
-##General Info
+## General Info
 This project is a real-time chat application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It enables users to create accounts, join chat rooms, and exchange messages in real-time, providing a seamless communication experience.
 
-Backend Technologies Used:
-Node.js
+## Backend Technologies Used:
+# Node.js
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript on the server-side, enabling the building of scalable and efficient web applications.
 
-Express.js
+# Express.js
 Express.js is a web application framework for Node.js. It simplifies the process of building web applications and APIs by providing a robust set of features for routing, middleware, and HTTP utilities.
 
-MongoDB
+# MongoDB
 MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It's commonly used in MERN stack applications for its scalability and flexibility.
 
 Mongoose
