@@ -69,6 +69,8 @@ Chat Rooms: Users can join different chat rooms to engage in group conversations
 User Status: Displays online/offline status of users in the chat interface, indicating whether users are currently active.
 Message History: Stores chat message history in MongoDB, allowing users to view previous messages upon joining a chat room.
 
-## Code & Snippets
-# Backend Code Snippets:
-# Frontend Code Snippets:
+# Code & Snippets: 
+## Backend Code Snippets:
+
+## Frontend Code Snippets:
+
