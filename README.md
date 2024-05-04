@@ -1,11 +1,14 @@
-Table of Contents
-General Info
-Backend Technologies Used
-Frontend Technologies Used
-Setup
-Features
-Code & Snippets
-General Info
+#Table of Contents
+
+##General Info
+1. [**General Info**](#general-info)
+2. [**Backend Technologies Used**](#backend-technology-used)
+3. [**Frontend Technologies Used**](#frontend-techlogy-used)
+4. [**Setup**](#setup)
+5. [**Features**](#features) 
+6. [**Code & Snippets**](#CodeSnippets)
+   
+##General Info
 This project is a real-time chat application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It enables users to create accounts, join chat rooms, and exchange messages in real-time, providing a seamless communication experience.
 
 Backend Technologies Used:
@@ -67,3 +70,4 @@ User Status: Displays online/offline status of users in the chat interface, indi
 Message History: Stores chat message history in MongoDB, allowing users to view previous messages upon joining a chat room.
 Code & Snippets
 Backend Code Snippets:
+Frontend Code Snippets:
