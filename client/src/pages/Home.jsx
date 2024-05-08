@@ -37,26 +37,26 @@ const Home = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work sans" textAlign="center" color="black">
-        Chatterbox
+          Chatterbox
         </Text>
       </Box>
 
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px" borderColor="black">
-  <Tabs isFitted variant="soft-rounded" color="black">
-    <TabList mb="1em">
-      <Tab>Login</Tab>
-      <Tab>Sign Up</Tab>
-    </TabList>
-    <TabPanels>
-      <TabPanel>
-        <Login />
-      </TabPanel>
-      <TabPanel>
-        <Signup />
-      </TabPanel>
-    </TabPanels>
-  </Tabs>
-</Box>
+        <Tabs isFitted variant="soft-rounded" color="black">
+          <TabList mb="1em">
+            <Tab _selected={{ color: "white", bg: "black" }}>Login</Tab>
+            <Tab _selected={{ color: "white", bg: "black" }}>Sign Up</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Login />
+            </TabPanel>
+            <TabPanel>
+              <Signup />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </Box>
     </Container>
   );
 };
