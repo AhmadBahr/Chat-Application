@@ -148,7 +148,7 @@ const GroupChatModal = ({ children }) => {
             fontSize="35px"
             fontFamily="Work sans"
           >
-            Create Group Chat
+            Create Chat
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody display="flex" flexDir="column" alignItems="center">

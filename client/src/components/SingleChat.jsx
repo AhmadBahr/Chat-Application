@@ -250,7 +250,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           h="100%"
         >
           <Text fontSize="3xl" pb="3" fontFamily="Work sans">
-            Click on a user to start chatting
+           Messages appear Here
           </Text>
         </Box>
       )}
