@@ -17,6 +17,11 @@ import {
 const ProfileModal = ({ user, children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  // Check if user object is defined before rendering
+  if (!user) {
+    return null; // Or handle the case where user is null or undefined
+  }
+
   return (
     <>
       {children ? (

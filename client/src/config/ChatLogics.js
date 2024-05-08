@@ -1,62 +1,79 @@
+// Function to get the sender's name
 export const getSender = (loggedUser, users) => {
-  return users[0]._id === loggedUser._id ? users[1].name : users[0].name;
+  // Check if users array is defined
+  if (users) {
+    const otherUser = users.find(user => user._id !== loggedUser._id);
+    return otherUser ? otherUser.name : null;
+  } else {
+    // Handle the case where users is undefined or null
+    console.error("Error: users is undefined or null in getSender.");
+    return null;
+  }
 };
 
+// Function to get the full sender object
 export const getSenderFull = (loggedUser, users) => {
-  return users[0]._id === loggedUser._id ? users[1] : users[0];
+  // Check if users array is defined
+  if (users) {
+    const otherUser = users.find(user => user._id !== loggedUser._id);
+    return otherUser || null;
+  } else {
+    // Handle the case where users is undefined or null
+    console.error("Error: users is undefined or null in getSenderFull.");
+    return null;
+  }
 };
 
-export const isSameSender = (
-  messages,
-  currentMessage,
-  currentMessageIndex,
-  loggedUserId
-) => {
+// Function to check if the sender of the current message is the same as the next message sender
+export const isSameSender = (messages, currentMessageIndex, loggedUserId) => {
+  const currentMessage = messages[currentMessageIndex];
+  const nextMessage = messages[currentMessageIndex + 1];
+
   return (
-    currentMessageIndex < messages.length - 1 &&
-    (messages[currentMessageIndex + 1].sender._id !==
-      currentMessage.sender._id ||
-      messages[currentMessageIndex + 1].sender._id === undefined) &&
-    messages[currentMessageIndex].sender._id !== loggedUserId
+    nextMessage &&
+    nextMessage.sender._id === currentMessage.sender._id &&
+    currentMessage.sender._id !== loggedUserId
   );
 };
 
+// Function to check if the current message is the last message and sent by a different user
 export const isLastMessage = (messages, currentMessageIndex, loggedUserId) => {
+  const lastMessage = messages[messages.length - 1];
   return (
     currentMessageIndex === messages.length - 1 &&
-    messages[messages.length - 1].sender._id !== loggedUserId &&
-    messages[messages.length - 1].sender._id
+    lastMessage &&
+    lastMessage.sender._id !== loggedUserId
   );
 };
 
+// Function to determine the margin based on the sender of the current and next message
 export const isSameSenderMargin = (
   messages,
-  currentMessage,
   currentMessageIndex,
   loggedUserId
 ) => {
-  if (
-    currentMessageIndex < messages.length - 1 &&
-    messages[currentMessageIndex + 1].sender._id ===
-      currentMessage.sender._id &&
-    messages[currentMessageIndex].sender._id !== loggedUserId
-  )
+  const currentMessage = messages[currentMessageIndex];
+  const nextMessage = messages[currentMessageIndex + 1];
+
+  if (nextMessage && nextMessage.sender._id === currentMessage.sender._id) {
     return 33;
-  else if (
-    (currentMessageIndex < messages.length - 1 &&
-      messages[currentMessageIndex + 1].sender._id !==
-        currentMessage.sender._id &&
-      messages[currentMessageIndex].sender._id !== loggedUserId) ||
-    (currentMessageIndex === messages.length - 1 &&
-      messages[currentMessageIndex].sender._id !== loggedUserId)
-  )
+  } else if (
+    (!nextMessage || nextMessage.sender._id !== currentMessage.sender._id) &&
+    currentMessage.sender._id !== loggedUserId
+  ) {
     return 0;
-  else return "auto";
+  } else {
+    return "auto";
+  }
 };
 
-export const isSameUser = (messages, currentMessage, currentMessageIndex) => {
+// Function to check if the sender of the current message is the same as the previous message sender
+export const isSameUser = (messages, currentMessageIndex) => {
+  const currentMessage = messages[currentMessageIndex];
+  const previousMessage = messages[currentMessageIndex - 1];
+
   return (
-    currentMessageIndex > 0 &&
-    messages[currentMessageIndex - 1].sender._id === currentMessage.sender._id
+    previousMessage &&
+    previousMessage.sender._id === currentMessage.sender._id
   );
 };
