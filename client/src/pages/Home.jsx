@@ -36,16 +36,16 @@ const Home = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans" textAlign="center" color="black">
-          Chatterbox
+        <Text fontSize="4xl" fontFamily="Work sans" textAlign="center">
+          Bit Chat
         </Text>
       </Box>
 
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px" borderColor="black">
-        <Tabs isFitted variant="soft-rounded" color="black">
+      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+        <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
-            <Tab _selected={{ color: "white", bg: "black" }}>Login</Tab>
-            <Tab _selected={{ color: "white", bg: "black" }}>Sign Up</Tab>
+            <Tab>Login</Tab>
+            <Tab>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

@@ -15,8 +15,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-const port = process.env.PORT || 5000;
-
 // --------------------------DEPLOYMENT------------------------------
 
 if (process.env.NODE_ENV === "production") {
@@ -38,9 +36,10 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound); // Handle invalid routes
 app.use(errorHandler);
 
-const server = app.listen(port, () =>
-  console.log(`Server started on PORT ${port}`)
+const server = app.listen(process.env.PORT, () =>
+  console.log(`Server started on PORT ${process.env.PORT}`)
 );
+
 const io = require("socket.io")(server, {
   cors: {
     origin: "http://localhost:3000",

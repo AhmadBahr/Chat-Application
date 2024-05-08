@@ -1,79 +1,210 @@
-# Chatterbox 
-A One - One Chat Application
+<div align="center">
 
-# Table of Contents
+<!-- Title: -->
+  <a href="https://bitchat.rohittewari.live" target="_blank">
+    <img src="https://user-images.githubusercontent.com/75976169/202110105-88e5106c-2c4b-4314-9286-d1aae4541715.png" height="150" alt="Logo with shadow">
+  </a>
 
-## General Info
-1. [**General Info**](#general-info)
-2. [**Backend Technologies Used**](#backend-technology-used)
-3. [**Frontend Technologies Used**](#frontend-techlogy-used)
-4. [**Setup**](#setup)
-5. [**Features**](#features) 
-6. [**Code & Snippets**](#CodeSnippets)
-   
-## General Info
-This project is a real-time chat application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It enables users to create accounts, join chat rooms, and exchange messages in real-time, providing a seamless communication experience.
+  <!-- <a href="https://bitchat.rohittewari.live" target="_blank">
+    <img src="https://user-images.githubusercontent.com/75976169/202110425-565c3278-4e8e-4754-b511-38be8ef23273.png" height="150" alt="Logo without shadow">
+  </a> -->
 
-## Backend Technologies Used:
-# Node.js
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript on the server-side, enabling the building of scalable and efficient web applications.
+<!-- Short description: -->
+<h2>Real-time chat application powered by socket.io</h2>
 
-# Express.js
-Express.js is a web application framework for Node.js. It simplifies the process of building web applications and APIs by providing a robust set of features for routing, middleware, and HTTP utilities.
+<!-- Labels: -->
+  <div>
+    <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102" height="20">
+  <a href="https://bitchat.rohittewari.live" target="_blank">
+    <img src="https://img.shields.io/website-up-down-green-red/https/bitchat.rohittewari.live.svg" height="20" alt="Website up">
+  </a>
+  <img src="https://img.shields.io/github/repo-size/rtewari056/bitchat.svg?label=Repo%20size" height="20" alt="Repo size">
+  <img src="https://img.shields.io/github/languages/top/rtewari056/bitchat" height="20" alt="GitHub top language">
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/github/license/rtewari056/bitchat" height="20" alt="MIT License">
+  </a>
+  </div>
 
-# MongoDB
-MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It's commonly used in MERN stack applications for its scalability and flexibility.
+</div>
 
-# Mongoose
-Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js. It provides a straightforward schema-based solution for modeling application data and interacting with MongoDB databases.
+## 🚀 Demo
 
-# Socket.IO
-Socket.IO is a JavaScript library for real-time web applications. It enables bidirectional communication between web clients and servers, facilitating real-time data transfer.
+This application is deployed on DigitalOcean. Please check it out :smile: [here](https://bitchat.rohittewari.live).
 
-## Frontend Technologies Used:
-# HTML
-HTML (Hypertext Markup Language) is the standard markup language for creating web pages and web applications. It provides the structure for web content.
+![bitchat](https://user-images.githubusercontent.com/75976169/202241510-bb0dc077-11c2-4a22-9443-b241ecfca77c.gif)
 
-# CSS
-CSS (Cascading Style Sheets) is used to style the HTML structure, including setting fonts, colors, margins, paddings, and alignments.
+## 🖥️ Tech Stack
 
-# JavaScript
-JavaScript is a programming language that enables interactive and dynamic features on web pages. It's commonly used for client-side scripting and interacting with web content.
+**Frontend:**
 
-# React
-React is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and manage application state efficiently.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)&nbsp;
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)&nbsp;
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)&nbsp;
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)&nbsp;
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)&nbsp;
+![Chakra UI](https://img.shields.io/badge/chakra-%234ED1C5.svg?style=for-the-badge&logo=chakraui&logoColor=white)&nbsp;
 
-# Redux Toolkit
-Redux Toolkit is a package that simplifies the usage of Redux for state management in React applications. It includes utilities to simplify common Redux use cases and reduces boilerplate code.
+**Backend:**
 
-# Socket.IO Client
-Socket.IO Client is the client-side library for Socket.IO. It enables web clients to establish a connection with Socket.IO servers and exchange real-time messages.
+![Node JS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)&nbsp;
+![HTML5](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)&nbsp;
+![JWT](https://img.shields.io/badge/json%20web%20tokens-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink)&nbsp;
+![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)&nbsp;
 
-# Chakra UI
-Chakra UI is a simple, modular, and accessible component library that provides a set of reusable UI components for building React applications.
+**Database:**
 
-## Setup
-Clone the repository: git clone https://github.com/your-username/chat-application.git
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
 
-Navigate to the project directory: cd chat-application
+**Deployed On:**
 
-Install backend dependencies: npm install
+[![DigitalOcean](https://img.shields.io/badge/Digital_Ocean-0080FF?style=for-the-badge&logo=DigitalOcean&logoColor=white)](https://bitchat.rohittewari.live)
 
-Install frontend dependencies: cd client && npm install
+## ⚡️ Features
 
-Start the development server: npm run dev
+- [x] Real time communication is supported using [Socket.io](https://socket.io/)
+- [x] Fully Responsive UI
+- [x] User authentication using email with Login as well as Logout feature.
+- [x] Passwords are encrypted.
+- [x] Toast notifications for user actions.
+- [x] Users can create group chat.
+- [x] Typing Indicators while other user typing something.
 
-Open your browser and go to http://localhost:3000 to view the chat application.
+## 📁 Project structure
+```terminal
+├── client/
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src/
+│   │   ├── animations/
+│   │   │   └── typing.json
+│   │   ├── components/
+│   │   │   ├── Authentication/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Signup.jsx
+│   │   │   ├── UserAvatar/
+│   │   │   │   ├── UserBadgeItem.jsx
+│   │   │   │   └── UserListItem.jsx
+│   │   │   ├── miscellaneous/
+│   │   │   │   ├── GroupChatModal.jsx
+│   │   │   │   ├── ProfileModal.jsx
+│   │   │   │   ├── SideDrawer.jsx
+│   │   │   │   └── UpdateGroupChatModal.jsx
+│   │   │   ├── ChatBox.jsx
+│   │   │   ├── ChatLoading.jsx
+│   │   │   ├── MyChats.jsx
+│   │   │   ├── ScrollableChat.jsx
+│   │   │   ├── SingleChat.jsx
+│   │   │   └── index.js
+│   │   ├── config/
+│   │   │   └── ChatLogics.js
+│   │   ├── context/
+│   │   │   └── ChatProvider.js
+│   │   ├── pages/
+│   │   │   ├── Chat.jsx
+│   │   │   ├── Home.jsx
+│   │   │   └── index.js
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+├── config/
+│   ├── connectToMongoDb.js
+│   ├── generateHashedPassword.js
+│   ├── generateToken.js
+│   ├── index.js
+│   └── verifyPassword.js
+├── controllers/
+│   ├── chatControllers.js
+│   ├── index.js
+│   ├── messageControllers.js
+│   └── userControllers.js
+├── middleware/
+│   ├── authMiddleware.js
+│   ├── errorMiddleware.js
+│   └── index.js
+├── models/
+│   ├── Chat.js
+│   ├── Message.js
+│   ├── User.js
+│   └── index.js
+├── routes/
+│   ├── chatRoutes.js
+│   ├── index.js
+│   ├── messageRoutes.js
+│   └── userRoutes.js
+├── .env.example
+├── .gitignore
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+└── server.js
+```
 
-## Features
-User Authentication: Users can create accounts and log in to access the chat application.
-Real-time Messaging: Utilizes Socket.IO for real-time bidirectional communication between clients and the server, enabling instant message delivery.
-Chat Rooms: Users can join different chat rooms to engage in group conversations, with the ability to create new chat rooms as needed.
-User Status: Displays online/offline status of users in the chat interface, indicating whether users are currently active.
-Message History: Stores chat message history in MongoDB, allowing users to view previous messages upon joining a chat room.
+## 📖 Prerequisites
 
-# Code & Snippets: 
-## Backend Code Snippets:
+In order to run the project you need `node>=16` and `npm>=8` installed on your machine.
 
-## Frontend Code Snippets:
+## 🚩 Getting Started
 
+### 1. Clone the `bitchat` repository:
+
+```bash
+git clone https://github.com/rtewari056/bitchat.git
+```
+
+### 2. Navigate into repo:
+```bash
+cd bitchat
+```
+
+### 3. Rename `.env.example` into `.env` and put all creadentials:
+
+```bash
+PORT=5000
+MONGO_URI="YOUR_MONGO_CONNECTION_URL"
+JWT_SECRET="YOUR_JWT_SECRET"
+JWT_EXPIRE=2d
+NODE_ENV=development # Change to "production" when deploying
+```
+
+### 4. Install package dependencies:
+
+```bash
+npm install # Server dependencies
+cd client
+npm install # Client dependencies
+```
+
+### 4. Run project:
+In the `root` directory, open two terminal sessions and run both commands separately:
+
+```bash
+npm run client
+npm run server
+```
+
+### 5. Open your browser and go to `http://localhost:3000`
+
+## 👤 Developer
+
+[Rohit Tewari](https://github.com/rtewari056)
+
+## 📬 Contact
+
+If you want to contact me, you can reach me through below handles.
+
+<a href="https://linkedin.com/in/rtewari056" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="mailto:rtewari056@gmail.com"><img  alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://twitter.com/rtewari056" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/></a>
+
+## 📃 License
+
+bitchat is licensed under the <a href="./LICENSE">MIT License</a>.
+
+### Show your support by 🌟 the project

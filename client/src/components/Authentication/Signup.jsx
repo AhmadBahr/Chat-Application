@@ -178,7 +178,6 @@ const Signup = () => {
             value={credentials.name}
             placeholder="Enter Your Name"
             onChange={(e) => handleCredentials(e)}
-            borderColor="black" // Setting border color to black
           />
         </FormControl>
       </Stack>
@@ -192,7 +191,6 @@ const Signup = () => {
             value={credentials.email}
             placeholder="Enter Your Email"
             onChange={(e) => handleCredentials(e)}
-            borderColor="black" // Setting border color to black
           />
         </FormControl>
       </Stack>
@@ -212,7 +210,6 @@ const Signup = () => {
               value={credentials.password}
               placeholder="Password"
               onChange={(e) => handleCredentials(e)}
-              borderColor="black" // Setting border color to black
             />
           </InputGroup>
         </FormControl>
@@ -233,7 +230,6 @@ const Signup = () => {
               value={credentials.confirmPassword}
               placeholder="Confirm Password"
               onChange={(e) => handleCredentials(e)}
-              borderColor="black" // Setting border color to black
             />
           </InputGroup>
         </FormControl>

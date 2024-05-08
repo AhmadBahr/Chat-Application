@@ -2,8 +2,8 @@
 
 .App {
   min-height: 100vh;
-  color: black;
   display: flex;
+  color: black;
   background: #654ea3; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

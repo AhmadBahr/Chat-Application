@@ -97,7 +97,6 @@ const Login = () => {
             value={credentials.email}
             placeholder="Enter Your Email"
             onChange={(e) => handleCredentials(e)}
-            borderColor="black" // Setting border color to black
           />
         </FormControl>
       </Stack>
@@ -117,7 +116,6 @@ const Login = () => {
               value={credentials.password}
               placeholder="Password"
               onChange={(e) => handleCredentials(e)}
-              borderColor="black" // Setting border color to black
             />
           </InputGroup>
         </FormControl>
