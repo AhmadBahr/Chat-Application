@@ -100,7 +100,7 @@ const Signup = () => {
     ) {
       setLoading(false);
       return toast({
-        title: "Please Fill all the Feilds",
+        title: "Please Fill all the Fields",
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -109,7 +109,7 @@ const Signup = () => {
       });
     }
 
-    // If password and confirm password doesn't match
+    // If password and confirm password don't match
     if (credentials.password !== credentials.confirmPassword) {
       setLoading(false);
       return toast({
@@ -178,6 +178,7 @@ const Signup = () => {
             value={credentials.name}
             placeholder="Enter Your Name"
             onChange={(e) => handleCredentials(e)}
+            borderColor="black" // Set border color to black
           />
         </FormControl>
       </Stack>
@@ -191,6 +192,7 @@ const Signup = () => {
             value={credentials.email}
             placeholder="Enter Your Email"
             onChange={(e) => handleCredentials(e)}
+            borderColor="black" // Set border color to black
           />
         </FormControl>
       </Stack>
@@ -210,6 +212,7 @@ const Signup = () => {
               value={credentials.password}
               placeholder="Password"
               onChange={(e) => handleCredentials(e)}
+              borderColor="black" // Set border color to black
             />
           </InputGroup>
         </FormControl>
@@ -230,6 +233,7 @@ const Signup = () => {
               value={credentials.confirmPassword}
               placeholder="Confirm Password"
               onChange={(e) => handleCredentials(e)}
+              borderColor="black" // Set border color to black
             />
           </InputGroup>
         </FormControl>
@@ -261,6 +265,7 @@ const Signup = () => {
                 },
               }}
               onChange={(e) => handleUploadPicture(e)}
+              borderColor="black" // Set border color to black
             />
           </InputGroup>
         </FormControl>

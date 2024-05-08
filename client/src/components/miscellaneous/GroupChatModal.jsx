@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -10,10 +11,10 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Spinner,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { useState } from "react";
 
 import { ChatState } from "../../context/ChatProvider";
 import UserBadgeItem from "../UserAvatar/UserBadgeItem";
@@ -28,12 +29,12 @@ const GroupChatModal = ({ children }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
-  const { user, chats, setChats } = ChatState();
+  const { user, setChats } = ChatState();
 
   const handleSearch = async (query) => {
     setSearch(query);
 
-    if (!query || query === "") {
+    if (!query.trim()) {
       setSearchResults([]);
       return;
     }
@@ -41,7 +42,7 @@ const GroupChatModal = ({ children }) => {
     try {
       setLoading(true);
 
-      const response = await fetch(`/api/user?search=${search}`, {
+      const response = await fetch(`/api/user?search=${query}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -49,31 +50,29 @@ const GroupChatModal = ({ children }) => {
       });
       const data = await response.json();
 
-      setLoading(false);
       setSearchResults(data);
     } catch (error) {
-      return toast({
-        title: "Error Occured!",
+      toast({
+        title: "Error Occurred!",
         description: "Failed to Load the Search Results",
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom-left",
-        variant: "solid",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleSubmit = async () => {
-    if (!groupChatName || !selectedUsers) {
-      return toast({
+    if (!groupChatName.trim() || selectedUsers.length === 0) {
+      toast({
         title: "Please fill all the fields",
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "bottom-left",
-        variant: "solid",
       });
+      return;
     }
 
     try {
@@ -85,54 +84,49 @@ const GroupChatModal = ({ children }) => {
         },
         body: JSON.stringify({
           name: groupChatName,
-          users: JSON.stringify(selectedUsers.map((user) => user._id)),
+          users: selectedUsers.map((user) => user._id),
         }),
       });
       const data = await response.json();
 
-      setChats([data, ...chats]);
+      setChats((prevChats) => [data, ...prevChats]);
       onClose(); // Close the modal
 
-      return toast({
+      toast({
         title: "New Group Chat Created!",
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "bottom-right",
-        variant: "solid",
       });
     } catch (error) {
-      return toast({
-        title: "Error Occured!",
+      toast({
+        title: "Error Occurred!",
         description: "Failed to create the chat!",
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom-right",
-        variant: "solid",
       });
     }
   };
 
   const handleDelete = (deletedUser) => {
-    setSelectedUsers(
-      selectedUsers.filter((selected) => selected._id !== deletedUser._id)
+    setSelectedUsers((prevUsers) =>
+      prevUsers.filter((user) => user._id !== deletedUser._id)
     );
   };
 
   const handleGroup = (userToAdd) => {
-    if (selectedUsers.includes(userToAdd)) {
-      return toast({
+    if (selectedUsers.some((user) => user._id === userToAdd._id)) {
+      toast({
         title: "User already added",
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
-        variant: "left-accent",
       });
+      return;
     }
 
-    setSelectedUsers([...selectedUsers, userToAdd]);
+    setSelectedUsers((prevUsers) => [...prevUsers, userToAdd]);
   };
 
   return (
@@ -142,33 +136,26 @@ const GroupChatModal = ({ children }) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader
-            display="flex"
-            justifyContent="center"
-            fontSize="35px"
-            fontFamily="Work sans"
-          >
-            Create Chat
-          </ModalHeader>
+          <ModalHeader>Create Chat</ModalHeader>
           <ModalCloseButton />
-          <ModalBody display="flex" flexDir="column" alignItems="center">
-            <FormControl>
+          <ModalBody>
+            <FormControl mb={3}>
               <Input
                 placeholder="Chat Name"
-                mb={3}
+                value={groupChatName}
                 onChange={(e) => setGroupChatName(e.target.value)}
               />
             </FormControl>
-            <FormControl>
+            <FormControl mb={3}>
               <Input
-                placeholder="Add Users eg: Rohit, Piyush, Aman"
-                mb={3}
+                placeholder="Search Users"
+                value={search}
                 onChange={(e) => handleSearch(e.target.value)}
               />
             </FormControl>
 
             {/* Selected users */}
-            <Box display="flex" flexWrap="wrap" w="100%">
+            <Box display="flex" flexWrap="wrap" mb={3}>
               {selectedUsers.map((user) => (
                 <UserBadgeItem
                   key={user._id}
@@ -178,16 +165,19 @@ const GroupChatModal = ({ children }) => {
               ))}
             </Box>
 
+            {/* Search results */}
             {loading ? (
-              <div>Loading</div>
+              <Spinner />
             ) : (
-              searchResults?.map((user) => (
-                <UserListItem
-                  key={user._id}
-                  user={user}
-                  handleFunction={() => handleGroup(user)}
-                />
-              ))
+              <Box maxHeight="300px" overflowY="auto">
+                {searchResults.map((user) => (
+                  <UserListItem
+                    key={user._id}
+                    user={user}
+                    handleFunction={() => handleGroup(user)}
+                  />
+                ))}
+              </Box>
             )}
           </ModalBody>
 
@@ -202,4 +192,4 @@ const GroupChatModal = ({ children }) => {
   );
 };
 
-export default GroupChatModal; 
+export default GroupChatModal;

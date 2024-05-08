@@ -33,7 +33,7 @@ const Login = () => {
     // If email or password is missing
     if (!credentials.email || !credentials.password) {
       toast({
-        title: "Please Fill all the Feilds",
+        title: "Please Fill all the Fields",
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -97,6 +97,7 @@ const Login = () => {
             value={credentials.email}
             placeholder="Enter Your Email"
             onChange={(e) => handleCredentials(e)}
+            borderColor="black" // Set border color to black
           />
         </FormControl>
       </Stack>
@@ -116,6 +117,7 @@ const Login = () => {
               value={credentials.password}
               placeholder="Password"
               onChange={(e) => handleCredentials(e)}
+              borderColor="black" // Set border color to black
             />
           </InputGroup>
         </FormControl>
