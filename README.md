@@ -80,6 +80,9 @@ Message History: Stores chat message history in MongoDB, allowing users to view 
 ![ChatBox jsx - Chat-Application - ahmad - Visual Studio Code 30-Jul-24 1_12_28 AM](https://github.com/user-attachments/assets/4a729f6e-76d0-45cf-b148-9e285ace4a8d)
 
 ## Frontend Code Snippets:
+![64956f283050864df77f17f3_Q4wKTMWWDGknsrJV3GkMJmthPDbwcvHnQNXVEchSL7g-e8hQ_H3hZPX792JEkeaqYm4XHPKruusZhJir1jOw5WpEmei3SmOGij40qAeWdvKUXfferoX9nx96A3Y_hSrUJ8UbnAWjcSB1XxoyR5IzgiA](https://github.com/user-attachments/assets/2b28ff92-d7af-46ee-bb74-ef648d733d02)
+![68747470733a2f2f692e696d6775722e636f6d2f414d6b706c39432e706e67](https://github.com/user-attachments/assets/f71b86b7-dbc2-4b87-82a9-2c753cc30ef5)
+![Code-2023-14-58-04](https://github.com/user-attachments/assets/efaa3ffd-d488-443e-beda-cc37e3cda60f)
 
 ![Welcome - Chat-Application - ahmad - Visual Studio Code 30-Jul-24 1_10_02 AM](https://github.com/user-attachments/assets/da4dfb46-5f59-4286-988c-9ea47b72f4bf)
 ![Welcome - Chat-Application - ahmad - Visual Studio Code 30-Jul-24 1_09_53 AM](https://github.com/user-attachments/assets/ded7d884-cd67-4368-afee-c9fb4bef7487)
